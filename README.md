@@ -1,40 +1,48 @@
-# python-mysql-product-management-system project_2
-CLI-based Product Management System using Python, MySQL, and Pandas to insert, display, and search product records with structured tabular output.
-🗄️ Product Database Management System (Python + MySQL)
+# 📦 Product Management System (PMS)
+### Python-MySQL Integration | Data Persistence | Structured Analytics with Pandas
 
-A simple command-line based project built using Python, MySQL, and Pandas to manage product data.
-This project allows you to connect to a database, insert product records, and search products by ID.
+<p align="left">
+<img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/Library-Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
+<img src="https://img.shields.io/badge/Interface-CLI-black?style=for-the-badge&logo=gnumetashadertoy" />
+</p>
 
-📌 Features
+---
 
-✔ Connect to MySQL database
-✔ Insert new product records
-✔ View all product records
-✔ Search product by ID
-✔ Display results in table format using Pandas
+## 📌 Project Overview
+The **Product Management System** is a robust CLI-based application designed to bridge the gap between high-level Python logic and relational database storage. This project focuses on efficient **CRUD (Create, Read, Update, Delete)** operations, utilizing the `Pandas` library to transform raw SQL data into professionally structured tabular formats for better readability and data handling.
 
-🛠️ Technologies Used
+## 🚀 Core Features
 
-Python 3.x
+* **Relational Data Persistence:** Seamlessly integrates with MySQL to ensure permanent storage of product records.
+* **Dynamic Data Entry:** Interactive command-line modules for real-time product insertion with validation.
+* **Advanced Search Capabilities:** High-speed querying to fetch specific records by unique identifiers (Product IDs).
+* **Structured Data Output:** Leverages the power of **Pandas DataFrames** to display database results in a clean, organized, and tabular format.
+* **Stable Connection Management:** Implemented centralized database configuration for easy environment switching and secure connectivity.
 
-MySQL Server
+---
 
-mysql-connector-python
+## 🛠️ Technical Stack
+* **Language:** Python 3.x
+* **Database:** MySQL Server
+* **Libraries:** `mysql-connector-python` (Database Driver), `pandas` (Data Manipulation)
+* **Design Pattern:** Modular Programming (Separation of Concerns)
 
-pandas
+---
 
-📁 Project Structure
-📦 project-folder
- ┣ 📜 database.py            # Database connection file
- ┣ 📜 insertdata_input.py    # Insert new product data
- ┣ 📜 searching.py           # View & search products
- ┗ 📜 README.md              # Project documentation
-⚙️ Database Setup
+## 📂 Project Architecture
+```text
+📦 product-management-system
+ ┣ 📜 database.py          # Configuration & Connection Engine
+ ┣ 📜 insertdata_input.py  # Data Intake: Handles user input & SQL INSERT logic
+ ┣ 📜 searching.py         # Query Engine: Logic for fetching and filtering data
+ ┗ 📜 README.md            # System Documentation
 
-Open MySQL and run the following SQL:
-
+⚙️ System Setup & Deployment
+1. Database Initialization
+Run the following SQL commands in your MySQL environment to set up the relational schema:
 CREATE DATABASE indian_bank;
-
 USE indian_bank;
 
 CREATE TABLE products (
@@ -42,51 +50,28 @@ CREATE TABLE products (
     products_name VARCHAR(50),
     products_price INT
 );
-🔌 Database Connection Config
+2. Dependency Installation
+Install the required Python drivers and libraries via pip:
 
-Update your credentials inside database.py:
-
-config1 = {
-    "host": "localhost",
-    "user": "root",
-    "port": 3306,
-    "password": "",
-    "database": "indian_bank",
-}
-▶️ How to Run the Project
-1️⃣ Install dependencies
+Bash
 pip install mysql-connector-python pandas
-2️⃣ Run Database Connection
-python database.py
+3. Execution Workflow
+Establish Connection: Run python database.py to verify the DB handshake.
 
-You should see:
+Ingest Data: Run python insertdata_input.py to populate the system.
 
-db connect successfully
-3️⃣ Insert Product Data
-python insertdata_input.py
+Retrieve Information: Run python searching.py to view the comprehensive inventory or search for specific items.
 
-Example input:
-
-enter a product id : 101
-enter a product name : Laptop
-enter a product price : 50000
-4️⃣ View & Search Product
-python searching.py
-
-✔ Shows all products
-✔ Asks for product ID
-✔ Displays result in table format
-
-📊 Example Output
-======================All Products=======================
+📊 Sample Output Representation
+====================== All Products =======================
    products_id products_name products_price
 0          101        Laptop          50000
-=========================================================
+===========================================================
 
 Enter product_id to search: 101
-
-Searching --------------
-Product Found
-
+Searching...
+Result Found:
    products_id products_name products_price
 0          101        Laptop          50000
+👨‍💻 Developed By
+Vikas Maurya Backend Developer & Data Enthusiast
